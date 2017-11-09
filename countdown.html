@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <span id="timespan"></span>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script>
+	var time = "2017/11/11 00:00:00";
+  var starttime = new Date(time);
+   GetTime();
+   setInterval(GetTime, 1000);
+   function GetTime() {
+	    var nowtime = new Date();
+	    var time = starttime - nowtime;
+	    var day = parseInt(time / 1000 / 60 / 60 / 24);
+	    var hour = parseInt(time / 1000 / 60 / 60 % 24);
+	    var minute = parseInt(time / 1000 / 60 % 60);
+	    var seconds = parseInt(time / 1000 % 60);
+   $("#timespan").html(day + "天" + hour + "小时" + minute + "分钟" + seconds + "秒");
+  }
+</script>
+</html>
