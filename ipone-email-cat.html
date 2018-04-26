@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	<style>
+	body{
+		background: #ccc;
+	}
+	.wechat-con {
+		display: none;
+		padding: 15px;
+		background: #fff;
+		position: absolute;
+		z-index: 9;
+		width: 362px;
+		height: 410px;
+		text-align: center;
+		border-raidus: 5px;
+		box-shadow: 1px 1px 4px #ccc;
+	}
+	</style>
+</head>
+<body>
+	<a href="tel:010-57121655">拨打电话</a>
+	<a href="sms:19956321564">发送短信<a>
+	<a href="mailto:mail@mail.com">发送邮件<a>
+	<img src="images/wechat.jpg">
+	<img src="images/qq.jpg">
+    <a href="https://open.weixin.qq.com/connect/qrconnect?
+appid=wx7efe1b0fa9ac159f&redirect_uri=http://www.yoger.com.cn/apilogin/wechat/index.php&re
+sponse_type=code&scope=snsapi_login&state=3d6be0a4035d839573b04816624a415e#wechat_redirect">wechat</a>
+
+	<button onclick="wechatLogin()">登录</button>
+	<div class="wechat-con" id="wechat_dlg" style="left: 19px; top: 167px; display: none;">
+		<iframe src="https://open.weixin.qq.com/connect/qrconnect?
+appid=wx7efe1b0fa9ac159f&redirect_uri=http://www.yoger.com.cn/apilogin/wechat/index.php&re
+sponse_type=code&scope=snsapi_login&state=3d6be0a4035d839573b04816624a415e#wechat_redirect" 
+frameborder="0" scrolling="no" width="300px" height="400px">
+		</iframe>
+	</div>
+	<script>
+		function wechatLogin(){
+			var wechatButton =document.getElementById("wechat_dlg");
+			wechatButton.style.display="block";
+		}
+	</script>
+</body>
+</html>
